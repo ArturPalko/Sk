@@ -1,0 +1,18 @@
+.nav{
+    text-decoration: none;
+    color:white;
+
+}
+
+.item a{
+    color:white;
+    text-decoration: none;
+}
+
+.item a:hover {
+    color: yellow; /* Цвет текста при наведении */
+}
+
+.item a.activeLink{
+    color:yellow;
+}

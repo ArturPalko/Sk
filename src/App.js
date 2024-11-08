@@ -1,24 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './Components/NavBar/NavBar.jsx';
+import Header from './Components/Header/Header.jsx';
+import Main from './Components/Main/Main.jsx';
+import Dialogs from './Components/Dialogs/Dialogs.jsx';
+import Tasks from './Components/Tasks/Tasks.jsx';
+import Conversations from './Components/Conversations/Conversations.jsx'; // Исправлено: импорт Conversations
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import store from './State/Store.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className='app-wrapper'>
+        <Header />
+        <NavBar />
+        <div className='app-wrapper-content'>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/dialogs" element={<Dialogs />}>
+              {/* Вложенный маршрут для динамического пути */}
+              <Route path=":username" element={<Conversations />} />
+            </Route>
+            <Route path="/tasks" element={<Tasks />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

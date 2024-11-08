@@ -1,0 +1,87 @@
+#username{
+  color:orange;
+}
+
+.footerOfMessage {
+  display: flex;
+  flex-direction: row;
+}
+
+.viewIcon {
+  position: relative;
+  width: 60px;
+  left: 100px;
+
+}
+
+.timeMark{
+  color: orange;
+  width: 80px;
+}
+
+
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px; /* Обмежує висоту контейнера */
+  overflow-y: auto; /* Додає вертикальну прокрутку */
+  
+}
+.messageBody {
+    border: 2px solid #000000;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    max-width: 300px;
+    font-size: 14pt;
+  }
+  
+  .myMessage {
+    background-color: bisque; /* Колір для моїх повідомлень */
+    text-align: left; /* Розташування по лівому краю */
+    margin-left: 0; /* Для того, щоб вони відображались зліва */
+    align-self: flex-start;
+    width: 400px;
+  }
+  
+  .otherMessage {
+    position: relative;
+    background-color: #f0f0f0; /* Інший колір для чужих повідомлень */
+    text-align: right; /* Розташування по правому краю */
+    margin-left: 2000; /* Для відображення повідомлень з правої сторони */
+    align-self: flex-end; /* Вирівнює чужі повідомлення справа */
+    margin-left: 700px;
+    width: 400px;
+  }
+  
+.inputContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .inputField {
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+  }
+
+  .inputField {
+    resize: none; /* Забороняє змінювати розміри вручну */
+    overflow-y: hidden; /* Приховує вертикальний скрол */
+  }
+  
+  .sendButton {
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .sendButton:hover {
+    background-color: #13c019;
+}

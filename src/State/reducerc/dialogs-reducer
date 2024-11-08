@@ -1,0 +1,17 @@
+const initialState = {
+    newMessageBody: '',
+};
+
+const dialogsReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case 'UPDATE_NEW_MESSAGE_BODY':
+            return {
+                ...state, // Создаем новый объект состояния
+                newMessageBody: action.body, // Обновляем только нужное поле
+            };
+        default:
+            return state;
+    }
+};
+
+export default dialogsReducer;

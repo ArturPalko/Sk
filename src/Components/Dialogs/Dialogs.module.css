@@ -1,0 +1,22 @@
+.dialogs {
+    position: relative;
+   /* margin-top: 100px;*/
+    margin-left: 100px;
+    font-size: 24pt;
+    display: grid;
+    grid-template-rows: 1fr; /* 1fr, щоб обидва блоки мали однакову висоту */
+    grid-template-columns: 2fr 10fr; /* Відправники будуть займати 2 частини, повідомлення 10 */
+    grid-template-areas: "s m"; /* Задаємо області */
+  }
+  
+  .senders {
+    grid-area: s;
+    margin-top: 100px;
+  }
+  
+  .messages {
+    grid-area: m;
+    margin-top: 100px;
+  }
+  
+

@@ -1,0 +1,22 @@
+#userName {
+    position: absolute;
+    top:0px;
+    margin-left: 1200px;
+    height: 35px;
+    padding-top: 25px;
+    background-color: bisque; /* Начальный цвет фона */
+    transition: background-color 0.3s; /* Плавный переход */
+
+}
+
+/* Изменяем цвет фона при наведении */
+#userName:hover {
+    background-color: rgb(245, 245, 115); /* Цвет фона при наведении (светлее) */
+}
+#time{
+    padding: 25px;
+    position: relative;
+    margin-left: 900px;
+
+}
+
