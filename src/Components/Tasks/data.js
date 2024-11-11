@@ -9,12 +9,11 @@ let tasks = [
         sentAt: '05.11.2024',
         deadline: '06.11.2024',
         senderName: 'Артур',
+        receiver: 'Палько Артур Сергійович',
         assignees: ['Іван', 'Марія'],
         status: {
-            assignedTo: {
-                Іван: 'в процесі',
-                Марія: 'не почато'
-            }
+            assignedTo: [{name:'Марина' , status: 'не вказано', date: 'не вказано'},
+                {name:'Юрій' , status: 'Виконано', date: '05.11.2024' }] 
         }
     },
     {
@@ -27,11 +26,11 @@ let tasks = [
         sentAt: '05.11.2024',
         deadline: '07.11.2024',
         senderName: 'Аліна',
+        receiver: 'Палько Артур Сергійович',
         assignees: ['Олег'],
         status: {
-            assignedTo: {
-                Олег: 'в процесі'
-            }
+            assignedTo: [{name:'Анастасія' , status: 'не вказано', date: 'не вказано'},
+                {name:'Юрій' , status: 'Виконано', date: '06.11.2024' }] 
         }
     },
     {
@@ -44,11 +43,11 @@ let tasks = [
         sentAt: '05.11.2024',
         deadline: '10.11.2024',
         senderName: 'Петро',
+        receiver: 'Палько Артур Сергійович',
         assignees: ['Софія'],
         status: {
-            assignedTo: {
-                Софія: 'завершено'
-            }
+            assignedTo: [{name:'Катерина' , status: 'не вказано', date: 'не вказано'},
+                {name:'Юрій' , status: 'Виконано', date: '07.11.2024' }] 
         }
     },
     {
@@ -61,12 +60,11 @@ let tasks = [
         sentAt: '05.11.2024',
         deadline: '05.11.2024',
         senderName: 'Катерина',
+        receiver: 'Палько Артур Сергійович',
         assignees: ['Анастасія', 'Дмитро'],
         status: {
-            assignedTo: {
-                Анастасія: 'не почато',
-                Дмитро: 'завершено'
-            }
+            assignedTo: [{name:'Олена' , status: 'не вказано', date: 'не вказано'},
+                {name:'Юрій' , status: 'Виконано', date: '08.11.2024' }] 
         }
     },
     {
@@ -79,12 +77,11 @@ let tasks = [
         sentAt: '05.11.2024',
         deadline: '08.11.2024',
         senderName: 'Олександр',
+        receiver: 'Палько Артур Сергійович',
         assignees: ['Ігор', 'Марина'],
         status: {
-            assignedTo: {
-                Ігор: 'в процесі',
-                Марина: 'не почато'
-            }
+            assignedTo: [{name:'Валерія' , status: 'не вказано', date: 'не вказано'},
+                {name:'Юрій' , status: 'Виконано', date: '10.11.2024' }] 
         }
     }
 ];

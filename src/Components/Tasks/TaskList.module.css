@@ -1,4 +1,67 @@
+.borderFlex{
+    display: flex;
+    flex-direction: row;
+}
+.borderCenter{
+    border-bottom:2px dotted black;
+    height: 0px;
+    width: 40px;
+    z-index:-1;
+    margin-top: 15px;;
+}
+.border{
+    border-left: 2px dotted black; /* Толщина, стиль и цвет */
+    
 
+}
+
+.perfomrsViewHead{
+    margin-top: 40px;
+    border-left: 6px solid  red;
+    background-color: white;
+    }
+
+.perfomrsView{
+margin-top: 40px;
+z-index: 2;
+}
+
+.perfomer{
+    border-left: 6px solid  greenyellow;
+    background-color: white;
+    margin-bottom: 20px;
+    height: 40px;
+}
+
+
+.taskNav span {
+    margin-right: 20px;
+}
+.taskNav select {
+    margin-right: 20px;
+}
+.taskNav span.active {
+    text-decoration: underline;
+    text-decoration-color: yellow; /* Жовте підкреслення для вибраного елемента */
+  }
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5); /* більш прозорий білий фон */
+    z-index: 1000; /* щоб бути над усім контентом */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.typeFeed{
+    color:orange;
+}
 #typeFeed{
     color:orange;
 }
@@ -11,7 +74,7 @@
 }
 
 .btnSection{
-    margin-top: 150px;
+    margin-top: 120px;
     margin-left: 240px;
 }
 
