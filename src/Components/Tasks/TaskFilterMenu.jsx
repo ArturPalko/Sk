@@ -1,30 +1,40 @@
 import React, { useState } from 'react';
-import data from './data.js';
 import s from './TaskList.module.css';
 
-const TaskFilterMenu = () => {
+const TaskFilterMenu = ({ onFilterChange }) => {
     const [importance, setImportance] = useState('');
     const [department, setDepartment] = useState('');
 
     const handleImportanceChange = (event) => {
-        setImportance(event.target.value);
+        const value = event.target.value;
+        setImportance(value);
+        onFilterChange('importance', value); // передаємо обране значення у Tasks
     };
 
     const handleDepartmentChange = (event) => {
-        setDepartment(event.target.value);
+        const value = event.target.value;
+        setDepartment(value);
+        onFilterChange('department', value); // передаємо обране значення у Tasks
     };
 
     return (
         <div className={s.taskFilterMenu}>
             <div className={s.filterContainer}>
-                <button className={s.filterButton}>Усі</button>
+                <button className={s.filterButton} onClick={() => {
+                    setImportance('');
+                    setDepartment('');
+                    onFilterChange('importance', '');
+                    onFilterChange('department', '');
+                }}>
+                    Усі
+                </button>
                 <div className={s.radioGroup}>
                     <label>
                         <input
                             type="radio"
                             name="importance"
-                            value="low"
-                            checked={importance === 'low'}
+                            value="низька"
+                            checked={importance === 'низька'}
                             onChange={handleImportanceChange}
                         />
                         Низька
@@ -33,8 +43,8 @@ const TaskFilterMenu = () => {
                         <input
                             type="radio"
                             name="importance"
-                            value="medium"
-                            checked={importance === 'medium'}
+                            value="середня"
+                            checked={importance === 'середня'}
                             onChange={handleImportanceChange}
                         />
                         Середня
@@ -43,8 +53,8 @@ const TaskFilterMenu = () => {
                         <input
                             type="radio"
                             name="importance"
-                            value="high"
-                            checked={importance === 'high'}
+                            value="висока"
+                            checked={importance === 'висока'}
                             onChange={handleImportanceChange}
                         />
                         Висока
@@ -53,16 +63,16 @@ const TaskFilterMenu = () => {
                 <div className={s.selectContainer}>
                     <select value={department} onChange={handleDepartmentChange}>
                         <option value="">Оберіть відділ</option>
-                        <option value="1">Відділ IT</option>
-                        <option value="2">Господарсько-експлуатаційний</option>
-                        <option value="3">Організаційно-розпорядчий</option>
-                        <option value="4">Бухгалтерія</option>
-                        <option value="5">Кадри</option>
-                        <option value="6">Статистика</option>
+                        <option value="Відділ IT">Відділ IT</option>
+                        <option value="Господарсько-експлуатаційний">Господарсько-експлуатаційний</option>
+                        <option value="Організаційно-розпорядчий">Організаційно-розпорядчий</option>
+                        <option value="Бугалтерія">Бугалтерія</option>
+                        <option value="Кадри">Кадри</option>
                     </select>
                 </div>
             </div>
         </div>
     );
 };
+
 export default TaskFilterMenu;

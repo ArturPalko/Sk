@@ -1,0 +1,84 @@
+#saveBtn{
+    margin-top: 400px;
+    width: 80px;
+    margin-left:700px ;
+    background-color: rgb(24, 24, 128);
+    color:white;
+    border-radius: 10px;
+}
+
+#saveBtn:hover{
+    background-color: blue;
+    color:white
+}
+.taskNav span.active {
+    text-decoration: underline;
+    text-decoration-color: yellow; /* Жовте підкреслення для вибраного елемента */
+  }
+
+.taskNav{
+    display: flex;
+    flex-direction: row;
+    gap:40px;
+}
+
+.modalWindow{
+    display:flex;
+    flex-direction: column;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5); /* більш прозорий білий фон */
+    z-index: 1000; /* щоб бути над усім контентом */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createWindow{
+    width: 800px;
+    height: 600px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gainsboro;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1000; /* Забезпечує відображення поверх інших елементів */
+}
+
+
+.tasksLabel{
+    margin-left: 60px;
+    margin-top: 60px;
+}
+.span{
+    background-color: aquamarine;
+    
+}
+
+.tableElement {
+    display: flex;
+    flex-direction: column; /* Розміщує елементи по вертикалі */
+    justify-content: center; /* Центрує по вертикалі */
+    align-items: center; /* Центрує по горизонталі */
+    height: 100%; /* Забезпечує наявність висоти для вертикального центрирования */
+  }
+  .tableElement:hover {
+    transform: scale(1.05); /* Збільшує елемент при наведенні */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Додає тінь */
+  }  
+
+
+.main{
+    display: flex;
+    gap: 40px;
+    margin-left: 60px;
+    margin-top: 60px;
+}

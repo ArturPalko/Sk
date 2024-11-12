@@ -1,15 +1,31 @@
 import React, { useState } from 'react';
-import data from './data.js';
+import { Outlet } from 'react-router-dom';
 import s from './TaskList.module.css';
-import TasklFilterMenu from './TaskFilterMenu.jsx';
-import TaskItemMenu from './TaskItemMenu.jsx';
+import TaskFilterMenu from './TaskFilterMenu.jsx';
 import TaskItem from './TaskItem.jsx';
 import TaskHeader from './TaskHeader.jsx';
 
-const Tasks = () => {
-    const tasks = data;
 
-    const taskElements = tasks.map(task => (
+const Tasks = ({ data }) => {
+    const [filters, setFilters] = useState({ importance: '', department: '' });
+
+    // Обробник для оновлення фільтрів з TaskFilterMenu
+    const handleFilterChange = (filterType, value) => {
+        setFilters(prevFilters => ({
+            ...prevFilters,
+            [filterType]: value
+        }));
+    };
+
+    // Перевірка на правильність даних і фільтрація
+    const filteredTasks = (data || []).filter(task => {
+        const importanceMatch = filters.importance === '' || task.importance === filters.importance;
+        const departmentMatch = filters.department === '' || task.department === filters.department;
+        return importanceMatch && departmentMatch;
+    });
+
+    // Генеруємо список задач
+    const taskElements = filteredTasks.map(task => (
         <TaskItem
             key={task.id}
             department={task.department}
@@ -20,19 +36,20 @@ const Tasks = () => {
             importance={task.importance}
             senderName={task.senderName}
             receiver={task.receiver}
-            assignedTo={task.status.assignedTo}
+            assignedTo={task.status?.assignedTo} // Перевірка на наявність status
         />
     ));
 
     return (
         <>
-            <TasklFilterMenu />
+            <Outlet />
+            <TaskFilterMenu onFilterChange={handleFilterChange} />
             <div className={s.tasks}>
                 <TaskHeader />
                 {taskElements}
             </div>
         </>
     );
-}
+};
 
 export default Tasks;

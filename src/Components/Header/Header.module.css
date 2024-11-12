@@ -20,3 +20,26 @@
 
 }
 
+.panel {
+    display: block;
+    position: absolute; /* або 'fixed', залежно від вашого дизайну */
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    z-index: 1000; /* переконуємося, що панель відображається поверх інших елементів */
+    margin-left: 1200px;
+  }
+  
+  .panel ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .panel li {
+    margin-bottom: 8px;
+  }
+  
+
+
+
